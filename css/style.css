@@ -3,13 +3,16 @@ Joshua Snyder
 VFW 1211
 Project 2
 */
-
+html {
+    background-color: #E1DFD3;
+}
 
 h1 {
     margin: 20px;
+    padding-left: 250px;
+    border: ;
 /*
     padding: ;
-    border: ;
     outline: ;
     width: ;
     height: ;
@@ -18,4 +21,7 @@ h1 {
     visibility: ;
     word-wrap: ;
 */
+}
+fieldset {
+    background-color: #FAEBD7;
 }
