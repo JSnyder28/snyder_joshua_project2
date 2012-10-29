@@ -2,7 +2,7 @@
 <!-- Joshua Snyder -->
 <!-- VFW 1211 -->
 <!-- Project 1 -->
-<html lang="">
+<html>
     <head>
         <meta charset="utf-8" />
         <title>Recipes!</title>
@@ -15,36 +15,35 @@
         <link href="css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="site-wrapper">
-            <div id="content">
-                <h1>Add Recipe!</h1>
-                <form action="#" method="post">
-                    <fieldset>
-                        <legend>Recipe</legend>
-                        <ul>
-                            <li>
-                            <label for="category">Food Category</label>
-                            <select id="category">
-                                <option value="American">American</option>
-                                <option value="Chinese">Chinese</option>
-                                <option value="Italian">Italian</option>
-                                <option value="Japanese">Japanese</option>
-                                <option value="Mexican">Mexican</option>
-                                <option value="Seasonal">Seasonal</option>
-                            </select>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li><label for="dateadded">Date Added</label><input type="date" /></li>
-                            <li><label for="rcpname">Recipe Name</label><input type="text" id="rcpname"/></li>
-                            <li><label for="directions">Directions</label><textarea id="directions"></textarea></li>
-                            <li><label for="go-tomeal">Go-To Meal</label><input type="checkbox" value="Go-To Meal" id="go-tomeal" /></li>
-                            <li><label for="rating">Rate It?</label><input type="range" min="1" max="5" /></li>
-                        </ul>
-                    </fieldset>
-                    <input type="submit" value="Add It!" />
-                    <a href="#">Clear All Recipes</a>
-                    <a href="#">Look At My Recipes</a>
+        <h1>Add Recipe!</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Recipe</legend>
+                <ul id="catSelect">
+                  <li>
+                    <label for="category">Food Category</label>
+                    <select id="category">
+                        <option value="American">American</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Seasonal">Seasonal</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul id="rcpInfo">
+                    <li><label for="dateadded">Date Added</label><input type="date" /></li>
+                    <li><label for="rcpName">Recipe Name</label><input type="text" id="rcpName"/></li>
+                    <li><label for="directions">Directions</label><textarea id="directions"></textarea></li>
+                    <li><label for="go-to-meal">Go-To Meal</label><input type="checkbox" value="Go-To Meal" id="go-to-meal" /></li>
+                    <li><label for="rating">Rate It?</label><input type="range" min="1" max="5" id="rating" /></li>
+                </ul>
+            </fieldset>
+            <input type="submit" value="Add It!" id="addIt" />
+            <a href="#">Clear All Recipes</a>
+            <a href="#">Look At My Recipes</a>
         </form>
+    <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>
