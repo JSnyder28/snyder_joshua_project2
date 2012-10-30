@@ -42,5 +42,5 @@ ul {
 fieldset {
     background-color: #FAEBD7;
 }
-
+.even{background: #fff;}
 .hasFocus{border: 2px solid #ff0000;};

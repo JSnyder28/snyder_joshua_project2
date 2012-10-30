@@ -16,7 +16,7 @@
     </head>
     <body>
         <h1>Add Recipe!</h1>
-        <form action="#" method="post">
+        <form action="#" method="post" id="addRcpForm">
             <fieldset>
                 <legend>Recipe</legend>
                 <ul id="catSelect">
@@ -33,14 +33,14 @@
                   </li>
                 </ul>
                 <ul id="rcpInfo">
-                    <li><label for="dateadded">Date Added</label><input type="date" /></li>
-                    <li><label for="rcpName">Recipe Name</label><input type="text" id="rcpName"/></li>
+                    <li><label for="dateAdded">Date Added</label><input type="date" id="dateAdded" /></li>
+                    <li><label for="rcpName">Recipe Name</label><input type="text" id="rcpName" /></li>
                     <li><label for="directions">Directions</label><textarea id="directions"></textarea></li>
-                    <li><label for="go-to-meal">Go-To Meal</label><input type="checkbox" value="Go-To Meal" id="go-to-meal" /></li>
+                    <li><label for="go_to_meal">Go-To-Meal</label><input type="checkbox" value="Go-To-Meal" id="go_to_meal" /></li>
                     <li><label for="rating">Rate It?</label><input type="range" min="1" max="5" id="rating" /></li>
                 </ul>
+                <input type="button" value="Add It!" id="addIt" />
             </fieldset>
-            <input type="submit" value="Add It!" id="addIt" />
             <a href="#">Clear All Recipes</a>
             <a href="#">Look At My Recipes</a>
         </form>
