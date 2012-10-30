@@ -28,7 +28,7 @@ var rcpList = document.createElement ("ol");
 var rcpListItems = document.createElement ("li");
 // END
 
-// appendChild Methods
+/* appendChild Methods
 var parentList = document.getElementById("rcpInfo");
 var recipeArr = [
 		"Chicken", "Beef", "Pork", "Turkey", "Ham"
@@ -44,23 +44,59 @@ for (i=0, j=recipeArr.length; i<j; i++) {  // Use for the creation of the stored
 		}
 		rcpList.appendChild(rcpListItems);
 }
-// END
+// END */
 
 // Checking the value
-var date = document.getElementById("dateAdded");
+var getCatValue = function () {
+		var _category = document.getElementById("category");
+		console.log(_category.value);
+};
 
-var getValue = function() {
-		//console.log(date.value);
+var getDateValue = function() {
+		var date = document.getElementById("dateAdded");
+		console.log(date.value);
+};
+
+var getNameValue = function() {
+		var name = document.getElementById("rcpName");
+		console.log(name.value);
+};
+
+var getDirectionsValue = function () {
+		var _directions = document.getElementById("directions");
+		console.log(_directions.value);
+};
+
+var getRatingValue = function () {
+		var _rating = document.getElementById("rating");
+		console.log(_rating.value);
 };
 // END
 
 // Is a checkbox checked or unchecked.
-var checkbox = document.getElementById("go_to_meal");
-//console.log(goToMeal);
 var getValue = function () {
+		var checkbox = document.getElementById("go_to_meal");
 		if (checkbox.checked) {
 				console.log(checkbox.value);
 		}
 };
+// END
 
+// Confirming the creation of a recipe.
+var confirmRcp = function () {
+		var _confirm = confirm("Create Recipe?");
+		if (_confirm) {
+				
+		} else {
+			alert("Recipe was not added");
+		}
+};
+// END
+
+addIt.addEventListener("click", confirmRcp);
+addIt.addEventListener("click", getCatValue);
+addIt.addEventListener("click", getDateValue);
+addIt.addEventListener("click", getNameValue);
+addIt.addEventListener("click", getDirectionsValue);
 addIt.addEventListener("click", getValue);
+addIt.addEventListener("click", getRatingValue);
