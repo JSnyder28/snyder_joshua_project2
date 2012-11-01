@@ -81,8 +81,79 @@ var getCkValue = function () {
 		}
 };
 // END */
+// Wait until the DOM is ready.
+window.addEventListener("DOMContentLoaded", function(){
 
-// Confirming the creation of a recipe.
+			// getElementById Function.
+			function $(x) {
+					var _element = document.getElementById(x);
+					return _element;
+			}
+
+			// Create select field element and populate with options.
+			function makeCats() {
+					var formTag = document.getElementsByTagName("form"),
+							selectLi = $('select'),
+							makeSelect = document.createElement('select');
+							makeSelect.setAttribute("id", "category");
+					for(var i=0, j=foodCategories.length; i<j; i++) {
+							var makeOption = document.createElement('option');
+							var optText = foodCategories[i];
+							makeOption.setAttribute("value", optText);
+							makeOption.innerHTML = optText;
+							makeSelect.appendChild(makeOption);
+					}
+					selectLi.appendChild(makeSelect);
+			}
+
+			// Find value of checkbox.
+			var getCheckboxValue = function () {
+					if($('goToMeal').checked) {
+							favoriteValue = $('goToMeal').value;
+					} else {
+							favoriteValue = "No"
+					}
+			}
+
+			// Find value of range slider.
+			var  getRatingValue = function () {
+						var ratingValue = $('rating').value;
+			}
+
+			function storeData() {
+					var id = Math.floor(Math.random()*100000001);
+					// Gather all form values and store it as an object.
+					// Object properties contain an array with form labels and inout values.
+					getCheckboxValue();
+					var item 						= {};
+							item.cat 				= ["Category:", $('category').value];
+							item.date 			= ["Date Added", $('dateAdded').value];
+							item.rcpName 		= ["Recipe Name:", $('rcpName').value];
+							item.directions = ["Directions:", $('directions').value];
+							item.favorite 	= ["Go-To-Meal?:", favoriteValue ];
+							//item.rating 		= ["Rating:", ratingValue];
+				
+					// Save data to local storage using stringify.
+					localStorage.setItem(id, JSON.stringify(item));
+					alert("Recipe added!");
+
+			}
+
+			// Variable Defaults
+			var foodCategories = ["--Choose One--", "American", "Chinese", "Italian", "Japanese", "Mexican", "Seasonal"];
+					favoriteValue = "No";
+			makeCats();
+
+			// Set Link $ Submit Click Events
+			/* var viewLink = $('viewLink');
+			viewLink.addEventListener("click", getData);
+			var clearLink = $('clearAll');
+			clearLink.addEventListener("click", clearData); */
+			var save = $('addIt');
+			save.addEventListener("click", storeData);
+});
+
+/* Confirming the creation of a recipe.
 var confirmRcp = function () {
 		var _confirm = confirm("Create Recipe?");
 		if (_confirm) {
@@ -124,6 +195,10 @@ var getLocalData = function () {
 
 //END
 
+var clearRcps = function () {
+		localStorage.clear();
+};
+
 // EventListeners
 _cat.addEventListener("blur", captureLocalData);
 //_date.addEventListener("blur", captureLocalData);
@@ -132,5 +207,6 @@ _cat.addEventListener("blur", captureLocalData);
 //_goTo.addEventListener("blur", captureLocalData);
 //_rating.addEventListener("blur", captureLocalData);
 addIt.addEventListener("click", getLocalData);
+clearAll.addEventListener("click", clearRcps);
 
-// END
+// END */
