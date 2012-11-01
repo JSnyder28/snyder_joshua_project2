@@ -26,9 +26,7 @@ h1 {
 }
 
 form {
-    -webkit-box-shadow:
-      inset 1px 1px 84px rgba(0,0,0,0.24)
-      inset -1px -1px 84px rgba(0,0,0,0.24);
+
 }
 
 label {
@@ -43,4 +41,4 @@ fieldset {
     background-color: #FAEBD7;
 }
 .even{background: #fff;}
-.hasFocus{border: 2px solid #ff0000;};
+.hasFocus{border: 5px solid #ff0000;};
