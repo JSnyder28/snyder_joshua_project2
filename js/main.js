@@ -139,16 +139,35 @@ window.addEventListener("DOMContentLoaded", function(){
 
 			}
 
+			var getData = function () {
+					// Write data from the local storage to the browser.
+					var makeDiv = document.createElement('div');
+					makeDiv.setAttribute("id", "items");
+					var makeList = document.createElement('ul');
+					makeDiv.appendChild(makeList);
+					// Creates container.
+					for(var i=0, j=localStorage.length; i<j; i++) {
+							var makeLi = document.createElement('li');
+							makeList.appendChild(makeLi);
+							var key 	= localStorage.key(i);
+							var value = localStorage.getItem(key);
+							var obj 	= JSON.parse(value);
+							// JSON.parse converts local storage string value to an object.
+							
+					}
+
+			}
+
 			// Variable Defaults
 			var foodCategories = ["--Choose One--", "American", "Chinese", "Italian", "Japanese", "Mexican", "Seasonal"];
 					favoriteValue = "No";
 			makeCats();
 
 			// Set Link $ Submit Click Events
-			/* var viewLink = $('viewLink');
+			var viewLink = $('viewLink');
 			viewLink.addEventListener("click", getData);
 			var clearLink = $('clearAll');
-			clearLink.addEventListener("click", clearData); */
+			clearLink.addEventListener("click", clearData);
 			var save = $('addIt');
 			save.addEventListener("click", storeData);
 });
