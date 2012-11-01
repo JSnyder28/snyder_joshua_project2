@@ -82,7 +82,7 @@ var getCkValue = function () {
 };
 // END */
 // Wait until the DOM is ready.
-window.addEventListener("DOMContentLoaded", function(){
+window.addEventListener("DOMContentLoaded", function() {
 
 			// getElementById Function.
 			function $(x) {
@@ -111,14 +111,14 @@ window.addEventListener("DOMContentLoaded", function(){
 					if($('goToMeal').checked) {
 							favoriteValue = $('goToMeal').value;
 					} else {
-							favoriteValue = "No"
+							favoriteValue = "No";
 					}
-			}
+			};
 
 			// Find value of range slider.
 			var  getRatingValue = function () {
 						var ratingValue = $('rating').value;
-			}
+			};
 
 			function storeData() {
 					var id = Math.floor(Math.random()*100000001);
@@ -130,14 +130,14 @@ window.addEventListener("DOMContentLoaded", function(){
 							item.date 			= ["Date Added", $('dateAdded').value];
 							item.rcpName 		= ["Recipe Name:", $('rcpName').value];
 							item.directions = ["Directions:", $('directions').value];
-							item.favorite 	= ["Go-To-Meal?:", favoriteValue ];
+							item.favorite 	= ["Go-To-Meal?:", favoriteValue];
 							//item.rating 		= ["Rating:", ratingValue];
 				
 					// Save data to local storage using stringify.
 					localStorage.setItem(id, JSON.stringify(item));
 					alert("Recipe added!");
 
-			}
+			};
 
 			var getData = function () {
 					// Write data from the local storage to the browser.
@@ -145,7 +145,7 @@ window.addEventListener("DOMContentLoaded", function(){
 					makeDiv.setAttribute("id", "items");
 					var makeList = document.createElement('ul');
 					makeDiv.appendChild(makeList);
-					// Creates container.
+					document.body.appendChild(makeDiv);
 					for(var i=0, j=localStorage.length; i<j; i++) {
 							var makeLi = document.createElement('li');
 							makeList.appendChild(makeLi);
@@ -153,10 +153,17 @@ window.addEventListener("DOMContentLoaded", function(){
 							var value = localStorage.getItem(key);
 							var obj 	= JSON.parse(value);
 							// JSON.parse converts local storage string value to an object.
-							
-					}
+							var makeSubList = document.createElement('ul');
+							makeLi.appendChild(makeSubList);
+							for(var l in obj) {
+									var makeSubLi = document.createElement('li');
+									makeSubList.appendChild(makeSubLi);
+									var optSubText = obj[l][0] + " " + obj[l][1];
+									makeSubLi.innerHTML = optSubText;
+							}
+					} 
 
-			}
+			};
 
 			// Variable Defaults
 			var foodCategories = ["--Choose One--", "American", "Chinese", "Italian", "Japanese", "Mexican", "Seasonal"];
@@ -166,8 +173,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			// Set Link $ Submit Click Events
 			var viewLink = $('viewLink');
 			viewLink.addEventListener("click", getData);
-			var clearLink = $('clearAll');
-			clearLink.addEventListener("click", clearData);
+			//var clearLink = $('clearAll');
+			//clearLink.addEventListener("click", clearData);
 			var save = $('addIt');
 			save.addEventListener("click", storeData);
 });
