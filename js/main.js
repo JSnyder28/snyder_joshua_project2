@@ -120,6 +120,27 @@ window.addEventListener("DOMContentLoaded", function() {
 						var ratingValue = $('rating').value;
 			};
 
+			// Toggle form visibility on/off.
+			var toggleControls = function (t) {
+					switch(t) {
+							case "on":
+									$('addRcpForm').style.display = "none";
+									$('clearAll').style.display 	= "inline";
+									$('viewLink').style.display 	= "none";
+									$('addRcp').style.display 		= "inline";
+									break;
+							case "off":
+									$('addRcpForm').style.display = "block";
+									$('clearAll').style.display 	= "inline";
+									$('viewLink').style.Display 	= "inline";
+									$('addRcp').style.display 		= "none";
+									$('items').style.display 			= "none";
+									break;
+							default:
+									return false;
+					}
+			};
+
 			function storeData() {
 					var id = Math.floor(Math.random()*100000001);
 					// Gather all form values and store it as an object.
@@ -140,12 +161,15 @@ window.addEventListener("DOMContentLoaded", function() {
 			};
 
 			var getData = function () {
+					toggleControls("on");
 					// Write data from the local storage to the browser.
 					var makeDiv = document.createElement('div');
 					makeDiv.setAttribute("id", "items");
 					var makeList = document.createElement('ul');
 					makeDiv.appendChild(makeList);
 					document.body.appendChild(makeDiv);
+					// Just in case "items" doesn't display through the toggle function.
+					$('items').style.display 			= "block";
 					for(var i=0, j=localStorage.length; i<j; i++) {
 							var makeLi = document.createElement('li');
 							makeList.appendChild(makeLi);
