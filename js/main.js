@@ -13,14 +13,14 @@ window.addEventListener("DOMContentLoaded", function() {
 
 			// Create select field element and populate with options.
 			function makeCats() {
-					var formTag = document.getElementsByTagName("form"),
+					var formTag = document.getElementsByTagName('form'),
 							selectLi = $('select'),
 							makeSelect = document.createElement('select');
-							makeSelect.setAttribute("id", "category");
+							makeSelect.setAttribute('id', 'category');
 					for(var i=0, j=foodCategories.length; i<j; i++) {
 							var makeOption = document.createElement('option');
 							var optText = foodCategories[i];
-							makeOption.setAttribute("value", optText);
+							makeOption.setAttribute('value', optText);
 							makeOption.innerHTML = optText;
 							makeSelect.appendChild(makeOption);
 					}
@@ -124,9 +124,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
 			// Set Link $ Submit Click Events
 			var viewLink = $('viewLink');
-			viewLink.addEventListener("click", getData);
+			viewLink.addEventListener('click', getData);
 			var clearLink = $('clearAll');
-			clearLink.addEventListener("click", clearData);
+			clearLink.addEventListener('click', clearData);
 			var save = $('addIt');
-			save.addEventListener("click", storeData);
+			save.addEventListener('click', storeData);
 });
