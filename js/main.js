@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function() {
 			function $(x) {
 					var _element = document.getElementById(x);
 					return _element;
-			}
+			};
 
 			// Create select field element and populate with options.
 			function makeCats() {
@@ -68,20 +68,18 @@ window.addEventListener("DOMContentLoaded", function() {
 							item.rcpName 		= ["Recipe Name:", $('rcpName').value];
 							item.directions = ["Directions:", $('directions').value];
 							item.favorite 	= ["Go-To-Meal?:", favoriteValue];
-							item.rating 		= ["Rating:", $('rating').value];
-				
+							item.rating 		= ["Rating:", $('rating').value];				
 					// Save data to local storage using stringify.
 					localStorage.setItem(id, JSON.stringify(item));
 					alert("Recipe added!");
 					window.location.reload();
-
 			};
 
 			var getData = function () {
 					toggleControls("on");
 					if(localStorage.length === 0) {
 							alert("No recipes to view");
-					}
+					};
 					// Write data from the local storage to the browser.
 					var makeDiv = document.createElement('div');
 					makeDiv.setAttribute("id", "items");
@@ -106,7 +104,6 @@ window.addEventListener("DOMContentLoaded", function() {
 									makeSubLi.innerHTML = optSubText;
 							}
 					} 
-
 			};
 
 			var clearData = function () {

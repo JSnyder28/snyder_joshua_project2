@@ -8,25 +8,21 @@ html {
     background-color: #E1DFD3;
 }
 
-h1 {
-    margin: 20px;
-    text-shadow: 3px 3px, 1px rgba(0,0,0,0.5);
-/*
-    padding-left: ;
-    border: ;
-    padding: ;
-    outline: ;
-    width: ;
-    height: ;
-    display: ;
-    overflow: ;
-    visibility: ;
-    word-wrap: ;
-*/
+#indexBody {
+    outline-style: ridge;
+    outline-color: gray;
+    outline-width: thin;
+    background-color: #FAEBD7;
 }
 
-form {
+#pIndex {
+    font: 1.0em "Arial Black", Gadget, sans-serif;
+    padding-left: 5px;
+}
 
+h1 {
+    margin: 20px;
+    font: 2.5em "Arial Black", Gadget, sans-serif;
 }
 
 label {
@@ -34,11 +30,17 @@ label {
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
+    padding-left: 2px;
 }
 
 fieldset {
     background-color: #FAEBD7;
 }
-.even{background: #fff;}
-.hasFocus{border: 5px solid #ff0000;};
+
+#items {
+    outline-style: ridge;
+    outline-color: gray;
+    outline-width: thin;
+    background-color: #FAEBD7;
+}
